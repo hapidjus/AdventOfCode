@@ -28,15 +28,15 @@ function getSeatId($input)
 		+ bsp(substr($input, 7, 3), 0, 7);
 }
 
-function bsp($input, $min, $max)
-{
-	if (!strlen($input) || $min === $max) {
+function bsp($input, $min, $max){
+	if(!strlen($input) || $min === $max) {
 		return $min;
 	}
-	if ($input[0] == 'F' || $input[0] == 'L') {
-		$max = intval($max - (($max - $min) / 2));
+	$middle = intval(($max - $min) / 2 + 0.5);
+	if(in_array($input[0], ['F', 'L'])) {
+		$max -= $middle;
 	} else {
-		$min = intval($min + (($max - $min) / 2) + 0.5);
+		$min += $middle;
 	}
 	return bsp(substr($input, 1), $min, $max);
 }
