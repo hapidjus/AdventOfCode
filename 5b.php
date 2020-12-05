@@ -32,11 +32,11 @@ function bsp($input, $min, $max){
 	if(!strlen($input) || $min === $max) {
 		return $min;
 	}
-	$middle = intval(($max - $min) / 2 + 0.5);
+	$middle = ($max - $min) / 2;
 	if(in_array($input[0], ['F', 'L'])) {
-		$max -= $middle;
+		$max -= floor($middle);
 	} else {
-		$min += $middle;
+		$min += ceil($middle);
 	}
 	return bsp(substr($input, 1), $min, $max);
 }
