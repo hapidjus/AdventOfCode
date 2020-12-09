@@ -17,13 +17,14 @@ function getSeatId($input){
 }
 
 function bsp($input, $min, $max){
-	if (!strlen($input) || $min === $max) {
+	if(!strlen($input) || $min === $max) {
 		return $min;
 	}
-	if ($input[0] == 'F' || $input[0] == 'L') {
-		$max = intval($max - (($max - $min) / 2));
+	$middle = ($max - $min) / 2;
+	if(in_array($input[0], ['F', 'L'])) {
+		$max -= floor($middle);
 	} else {
-		$min = intval($min + (($max - $min) / 2) + 0.5);
+		$min += ceil($middle);
 	}
 	return bsp(substr($input, 1), $min, $max);
 }
