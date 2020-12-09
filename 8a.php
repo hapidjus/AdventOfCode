@@ -1,6 +1,6 @@
 <?php
 $input = file('inputs/8a.txt', FILE_IGNORE_NEW_LINES);
-echo processInstruction(0, $input, 0, []);
+echo processInstruction(0, $input);
 return;
 
 function processInstruction($instruction, $input){
