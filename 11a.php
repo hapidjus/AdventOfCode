@@ -1,5 +1,4 @@
 <?php
-include "helpers.php";
 CONST EMPTY_SEAT = 'L';
 CONST TAKEN_SEAT = '#';
 $input = file('inputs/11a.txt', FILE_IGNORE_NEW_LINES);
