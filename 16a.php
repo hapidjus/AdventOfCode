@@ -1,5 +1,4 @@
 <?php
-include "helpers.php";
 $input = file_get_contents('inputs/16a.txt');
 [$validation,$myTicket, $tickets] = explode(PHP_EOL.PHP_EOL, $input);
 $tickets = explode(PHP_EOL,$tickets);
